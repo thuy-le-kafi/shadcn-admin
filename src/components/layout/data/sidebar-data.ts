@@ -21,9 +21,10 @@ import {
   AudioWaveform,
   Command,
   GalleryVerticalEnd,
-} from 'lucide-react'
-import { ClerkLogo } from '@/assets/clerk-logo'
-import { type SidebarData } from '../types'
+  CircuitBoardIcon,
+} from 'lucide-react';
+import { ClerkLogo } from '@/assets/clerk-logo';
+import { type SidebarData } from '../types';
 
 export const sidebarData: SidebarData = {
   user: {
@@ -56,6 +57,11 @@ export const sidebarData: SidebarData = {
           title: 'Dashboard',
           url: '/',
           icon: LayoutDashboard,
+        },
+        {
+          title: 'Board',
+          url: '/board',
+          icon: CircuitBoardIcon,
         },
         {
           title: 'Tasks',
@@ -202,4 +208,4 @@ export const sidebarData: SidebarData = {
       ],
     },
   ],
-}
+};

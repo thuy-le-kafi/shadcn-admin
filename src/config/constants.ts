@@ -1,0 +1,51 @@
+export enum REALTIME_CHANNEL_DATA_TYPE {
+  QUOTE = 'QUOTE',
+  BID_OFFER = 'BID_OFFER',
+  BID_ODD = 'BID_ODD',
+  QUOTE_ODD = 'QUOTE_ODD',
+}
+
+export enum SOCKET_STATUS {
+  CONNECTED = 'CONNECTED',
+  DISCONNECTED = 'DISCONNECTED',
+  CONNECTING = 'CONNECTING',
+}
+
+export enum SYMBOL_TYPE {
+  STOCK = 'STOCK',
+  FUND = 'FUND',
+  ETF = 'ETF',
+  FUTURES = 'FUTURES',
+  CW = 'CW',
+  BOND = 'BOND',
+  INDEX = 'INDEX',
+  FUTURES_BOND = 'FUTURES_BOND',
+}
+
+export enum MARKET {
+  HOSE = 'HOSE',
+  HNX = 'HNX',
+  UPCOM = 'UPCOM',
+}
+
+export enum MARKET_STATUS {
+  ATO = 'ATO',
+  LO = 'LO',
+  INTERMISSION = 'INTERMISSION',
+  ATC = 'ATC',
+  PLO = 'PLO',
+  RUNOFF = 'RUNOFF',
+  CLOSED = 'CLOSED',
+  PUT_THROUGH = 'PUT_THROUGH',
+  BUY_IN = 'BUYIN',
+}
+
+export enum SELL_BUY_TYPE {
+  BUY = 'BUY',
+  SELL = 'SELL',
+}
+
+export enum SYSTEM_TYPE {
+  EQUITY = 'EQUITY',
+  DERIVATIVES = 'DERIVATIVES',
+}
