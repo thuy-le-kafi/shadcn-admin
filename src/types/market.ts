@@ -139,7 +139,7 @@ export interface SymbolData extends ExtraSymbolData {
 }
 
 export interface SubscribeSymbol {
-  symbolList: SymbolData[];
+  symbols: string[];
   types: REALTIME_CHANNEL_DATA_TYPE[];
   fromBrowser?: boolean;
 }
@@ -181,4 +181,33 @@ export interface Advertise {
 export interface AdvertiseData {
   buy: Advertise[];
   sell: Advertise[];
+}
+
+export interface SectorInfo {
+  id: string;
+  symbols: string[];
+  name: {
+    vi: string;
+    en: string;
+  };
+}
+
+export interface Quote {
+  o?: number;
+  ti?: number;
+  c?: number;
+  ch?: number;
+  h?: number;
+  l?: number;
+  mb?: string;
+  mv?: number;
+  r?: number;
+  va?: number;
+  vo?: number;
+}
+
+export interface QuoteData {
+  data: Quote[];
+  fromIndex: number;
+  toIndex: number;
 }

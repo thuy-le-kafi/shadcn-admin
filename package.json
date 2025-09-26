@@ -37,11 +37,14 @@
     "@tanstack/react-query": "^5.85.3",
     "@tanstack/react-router": "^1.131.16",
     "@tanstack/react-table": "^8.21.3",
+    "ag-grid-community": "^34.2.0",
+    "ag-grid-react": "^34.2.0",
     "axios": "^1.11.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "1.1.1",
     "date-fns": "^4.1.0",
+    "fast-memoize": "^2.5.2",
     "input-otp": "^1.4.2",
     "lucide-react": "^0.542.0",
     "msgpack-lite": "^0.1.26",
@@ -82,6 +85,7 @@
     "prettier-plugin-tailwindcss": "^0.6.14",
     "typescript": "~5.9.2",
     "typescript-eslint": "^8.39.1",
-    "vite": "^7.1.2"
+    "vite": "^7.1.2",
+    "vite-plugin-node-polyfills": "^0.24.0"
   }
 }

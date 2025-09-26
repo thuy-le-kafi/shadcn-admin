@@ -7,7 +7,7 @@ export const queryClient = new QueryClient({
     queries: {
       retry: 0,
       refetchOnWindowFocus: import.meta.env.PROD,
-      staleTime: 3 * 1000,
+      staleTime: 3 * 1000, //
     },
     mutations: {
       retry: 0,

@@ -1,7 +1,9 @@
 import ReactDOM from 'react-dom/client';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { RouterProvider, createRouter } from '@tanstack/react-router';
+import { AllCommunityModule, ModuleRegistry } from 'ag-grid-community';
 import { queryClient } from '@/lib/queryClient';
+import '@/lib/socket';
 import { DirectionProvider } from './context/direction-provider';
 import { FontProvider } from './context/font-provider';
 import { ThemeProvider } from './context/theme-provider';
@@ -9,6 +11,8 @@ import { ThemeProvider } from './context/theme-provider';
 import { routeTree } from './routeTree.gen';
 // Styles
 import './styles/index.css';
+
+ModuleRegistry.registerModules([AllCommunityModule]);
 
 // Create a new router instance
 const router = createRouter({

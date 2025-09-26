@@ -1,3 +1,11 @@
+export const MARKET_DATA_FETCH_COUNT = 500;
+
+export const MARKET_HEADER = {
+  headers: {
+    apikey: undefined,
+  },
+};
+
 export enum REALTIME_CHANNEL_DATA_TYPE {
   QUOTE = 'QUOTE',
   BID_OFFER = 'BID_OFFER',

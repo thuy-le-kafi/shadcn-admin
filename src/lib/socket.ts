@@ -17,7 +17,8 @@ import {
   queryAdvertiseOptions,
   queryDealNoticeOptions,
   queryMarketStatusOptions,
-  queryStockOptions,
+  queryStockDetailOptions,
+  queryStocksQuotesOptions,
 } from '@/features/boards/services/queries.js';
 import { queryClient } from './queryClient';
 import * as scCodecMinBin from './sc-codec-min-bin.js';
@@ -235,17 +236,14 @@ class Socket {
   }
 
   subscribeSymbol(payload?: SubscribeSymbol) {
-    if (!payload?.symbolList || payload.symbolList.length === 0) return;
-    payload.symbolList.filter(Boolean).forEach((element) => {
+    if (!payload?.symbols || payload.symbols.length === 0) return;
+    payload.symbols.filter(Boolean).forEach((symbol) => {
       payload.types.forEach((type) => {
-        const chanelName = this.getStockChannelName(element.s, type);
+        const chanelName = this.getStockChannelName(symbol, type);
         this.subscribeChannel<SymbolData>(chanelName, (data) => {
           queryClient.setQueryData(
-            queryStockOptions(data.s).queryKey,
-            (oldData) => ({
-              ...oldData,
-              ...data,
-            })
+            queryStockDetailOptions(data.s).queryKey,
+            (oldData) => (oldData ? { ...oldData, ...data } : data)
           );
         });
       });
@@ -256,11 +254,10 @@ class Socket {
     payload?: SubscribeSymbol,
     callback?: (data: SymbolData) => void
   ) {
-    if (!payload?.symbolList || payload.symbolList.length === 0) return;
-    console.log('unsubscribe symbol', JSON.stringify(payload.symbolList));
-    payload.symbolList.filter(Boolean).forEach((element) => {
+    if (!payload?.symbols || payload.symbols.length === 0) return;
+    payload.symbols.filter(Boolean).forEach((symbol) => {
       payload.types.forEach((type) => {
-        const chanelName = this.getStockChannelName(element.s, type);
+        const chanelName = this.getStockChannelName(symbol, type);
         this.unsubscribeChannel(chanelName, callback);
       });
     });
